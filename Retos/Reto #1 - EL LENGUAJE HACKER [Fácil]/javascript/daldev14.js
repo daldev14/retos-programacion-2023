@@ -8,25 +8,53 @@
  */
 
 const Dictionary = {
-  "a": '4', "b": 'I3', "c": '[', "d": ')', "e": '3', "f": '|=', "g": '&', "h": '#',
-  "i": '1', "j": ',_|', "k": '>|', "l": '1', "m": '/\\/\\', "n": '^/', "o": '0',
-  "p": '|*', "q": '(_,)', "r": 'I2', "s": '5', "t": '7', "u": '(_)', "v": '\\/',
-  "w": '\\/\\/', "x": '><', "y": 'j', "z": '2', "1": 'L', "2": 'R', "3": 'E',
-  "4": 'A', "5": 'S', "6": 'b', "7": 'T', "8": 'B', "9": 'g', "0": 'o',
+  a: "4",
+  b: "ß",
+  c: "©",
+  d: "cl",
+  e: "€",
+  f: "ƒ",
+  g: "6",
+  h: "#",
+  i: "!",
+  j: "]",
+  k: "|c",
+  l: "£",
+  m: "nn",
+  n: "И",
+  o: "0",
+  p: "|º",
+  q: "&",
+  r: "Я",
+  s: "$",
+  t: "7",
+  u: "บ",
+  v: "/",
+  w: "Ш",
+  x: "Ж",
+  y: "Ч",
+  z: "2",
+  1: "L",
+  2: "R",
+  3: "E",
+  4: "A",
+  5: "S",
+  6: "b",
+  7: "T",
+  8: "B",
+  9: "g",
+  0: "o",
 };
 
 function ConvertToLeet(text) {
-  let arr = text.toLowerCase().split("");
-  arr = arr
-    .map((item) => {
-      if (Dictionary[item]) return Dictionary[item];
-      return item;
+  return text
+    .toLowerCase()
+    .split("")
+    .map((char) => {
+      if (Dictionary[char]) return Dictionary[char];
+      return char;
     })
     .join("");
-
-  return arr;
 }
 
-const result = ConvertToLeet("Daniel André Amaya López 203");
-
-console.log(result);
+console.log(ConvertToLeet("Hello World 👋"));
